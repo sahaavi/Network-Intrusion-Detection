@@ -19,7 +19,7 @@ def get_requirements(file_path:str)->List[str]:
 
 
 setup(
-    name='housing',
+    name='network_intrusion_detection',
     version='0.0.1',
     author='Avishek, Noman and Vimal',
     author_email='avisheksaha123@gmail.com',
