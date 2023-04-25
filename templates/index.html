@@ -1,3 +1,61 @@
-<h1>
-    Test
-</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Network Intrusion</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row justify-content-center align-items-center vh-100">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-header">
+						<h1 class="text-center">Network Intrusion Prediction</h1>
+					</div>
+					<div class="card-body">
+						<form action="{{ url_for('predict')}}" method="post">
+							<div class="form-group">
+								<label for="dst_host_same_srv_rate">Dst Host Same Srv Rate:</label>
+								<input type="text" class="form-control" id="dst_host_same_srv_rate" name="dst_host_same_srv_rate" required>
+								<label for="dst_host_serror_rate">Dst Host Serror Rate:</label>
+								<input type="text" class="form-control" id="dst_host_serror_rate" name="dst_host_serror_rate" required>
+								<label for="dst_host_srv_count">Dst Host Srv Count:</label>
+								<input type="text" class="form-control" id="dst_host_srv_count" name="dst_host_srv_count" required>
+								<label for="dst_host_srv_serror_rate">Dst Host Srv Serror Rate:</label>
+								<input type="text" class="form-control" id="dst_host_srv_serror_rate" name="dst_host_srv_serror_rate" required>
+								<label for="flag_S0">Flag (S0):</label>
+								<input type="text" class="form-control" id="flag_S0" name="flag_S0" required>
+								<label for="flag_SF">Flag (SF):</label>
+								<input type="text" class="form-control" id="flag_SF" name="flag_SF" required>
+                <label for="logged_in">Logged In:</label>
+								<input type="text" class="form-control" id="logged_in" name="logged_in" required>
+                <label for="same_srv_rate">Same Srv Rate:</label>
+								<input type="text" class="form-control" id="same_srv_rate" name="same_srv_rate" required>
+                <label for="serror_rate">Serror Rate</label>
+								<input type="text" class="form-control" id="serror_rate" name="serror_rate" required>
+                <label for="service_http">Service HTTP:</label>
+								<input type="text" class="form-control" id="service_http" name="service_http" required>
+                <label for="srv_serror_rate">SRV Serror Rate:</label>
+								<input type="text" class="form-control" id="srv_serror_rate" name="srv_serror_rate" required>
+                <label for="success_pred">Success Pred:</label>
+								<input type="text" class="form-control" id="success_pred" name="success_pred" required>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-lg">Predict</button>
+
+            </form>
+          </div>
+          <p style="text-align:center;"><strong>{{prediction_text}}</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

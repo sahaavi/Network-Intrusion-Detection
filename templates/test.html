@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Network Instrusion</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Network Instrusion Prediction</h1>
+    <!-- Main Input For Receiving Query to Model -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+      <input type="text" name="attack_type_neptune" placeholder="attack_type_neptune" required="required" /><br>
+      <input type="text" name="attack_type_normal" placeholder="attack_type_normal" required="required" /><br>
+      <input type="text" name="count" placeholder="count" required="required" /><br>
+      <input type="text" name="dst_host_same_srv_rate" placeholder="dst_host_same_srv_rate" required="required" /><br>
+      <input type="text" name="dst_host_serror_rate" placeholder="dst_host_serror_rate" required="required" /><br>
+      <input type="text" name="dst_host_srv_count" placeholder="dst_host_srv_count" required="required" /><br>
+      <input type="text" name="dst_host_srv_serror_rate" placeholder="dst_host_srv_serror_rate" required="required" /><br>
+      <input type="text" name="flag_S0" placeholder="flag_S0" required="required" /><br>
+      <input type="text" name="flag_SF" placeholder="flag_SF" required="required" /><br>
+      <input type="text" name="logged_in" placeholder="logged_in" required="required" /><br>
+      <input type="text" name="same_srv_rate" placeholder="same_srv_rate" required="required" /><br>
+      <input type="text" name="serror_rate" placeholder="serror_rate" required="required" /><br>
+      <input type="text" name="service_http" placeholder="service_http" required="required" /><br>
+      <input type="text" name="srv_serror_rate" placeholder="srv_serror_rate" required="required" /><br>
+      <input type="text" name="success_pred" placeholder="success_pred" required="required" /><br>
+      
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>

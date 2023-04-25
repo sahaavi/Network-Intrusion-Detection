@@ -29,6 +29,18 @@ def predict_api():
     output = output.tolist()
     return jsonify(output)
 
+@app.route("/predict", methods=['POST'])
+def predict():
+    data = [float(x) for x in request.form.values()]
+    final_input = scaler.transform(np.array(data).reshape(1, -1))
+    print(final_input)
+    output = mlp_model.predict(final_input)[0]
+    if output == 0:
+        output = 'Normal'
+    else:
+        output = 'an Attack/Intrusion'
+    return render_template('index.html', prediction_text='The connection is {}'.format(output))
+
 # run app
 if __name__ == "__main__":
     app.run(debug=True)
